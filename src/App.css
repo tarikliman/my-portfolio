@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+.card-wrapper{
+  background-color: #fff;
+  border-radius:6px;
+  color:black;
+}
+
+.project-image{
+  border-radius:6px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

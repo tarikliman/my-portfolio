@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -12,15 +12,15 @@ import { Box, HStack } from "@chakra-ui/react";
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto: hello@example.com",
+    url: "mailto:johnexample@gmail.com",
   },
   {
     icon: faGithub,
-    url: "https://github.com",
+    url: "https://github.com/",
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com",
+    url: "https://www.linkedin.com/",
   },
   {
     icon: faMedium,
@@ -43,9 +43,30 @@ const Header = () => {
       });
     }
   };
+  const [translateValue, setTranslateValue] = useState("translateY(0)");
+  let oldScrollY = 0;
+
+  const handleScroll = () => {
+    if(window.scrollY > oldScrollY) {
+      setTranslateValue("translateY(-200px)");
+    }else{
+      setTranslateValue("translateY(0)");
+    }
+    oldScrollY = window.scrollY;
+  };
+  
+  useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
+ 
 
   return (
     <Box
+      transform= {translateValue}
       position="fixed"
       top={0}
       left={0}
@@ -64,11 +85,18 @@ const Header = () => {
           alignItems="center"
         >
           <nav>
-            {/* Add social media links based on the `socials` data */}
+            <HStack spacing={8}>
+            {socials.map((social) => {
+              return (<a href={social.url} ><FontAwesomeIcon icon = {social.icon} size = "2x" /> </a>)
+            })}
+            </HStack>
+            
           </nav>
           <nav>
             <HStack spacing={8}>
-              {/* Add links to Projects and Contact me section */}
+                <a onClick = {handleClick("projects")} >Projects</a>
+                <a onClick = {handleClick("contactme")} >Contact Me</a>
+           
             </HStack>
           </nav>
         </HStack>
