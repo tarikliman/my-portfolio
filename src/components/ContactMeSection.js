@@ -42,9 +42,12 @@ const LandingSection = () => {
   });
 
   useEffect(() => {
-
-    onOpen(response.type , response.message);
-  }, [onOpen, response]);
+    if(response){
+      onOpen(response.type,response.message);
+      
+    }
+    
+  }, [response]);
 
   return (
     <FullScreenSection
