@@ -4,7 +4,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
-  faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
 
@@ -20,11 +19,7 @@ const socials = [
   {
     icon: faLinkedin,
     url: "https://www.linkedin.com/yusuftarikliman",
-  },
-  {
-    icon: faStackOverflow,
-    url: "https://stackoverflow.com/tarikliman",
-  },
+  }
 ];
 
 const Header = () => {
@@ -82,15 +77,15 @@ const Header = () => {
           <nav>
             <HStack spacing={8}>
             {socials.map((social) => {
-              return (<a href={social.url} ><FontAwesomeIcon icon = {social.icon} size = "2x" /> </a>)
+              return (<a href={social.url}  ><FontAwesomeIcon icon = {social.icon} size = "2x" /> </a>)
             })}
             </HStack>
             
           </nav>
           <nav>
             <HStack spacing={8}>
-                <a onClick = {handleClick("projects")} >Projects</a>
-                <a onClick = {handleClick("contactme")} >Contact Me</a>
+                <a className="cursor-event" onClick = {handleClick("projects")} >Projects</a>
+                <a className="cursor-event" onClick = {handleClick("contactme")} >Contact Me</a>
            
             </HStack>
           </nav>

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import "../App.css";
-const Card = ({ title, description, imageSrc }) => {
+const Card = ({ title, description, imageSrc, github }) => {
   return (
     <Box w='500px' h='max-content' bg='white' borderRadius="8px" >
       <Image
@@ -16,7 +16,7 @@ const Card = ({ title, description, imageSrc }) => {
         <Heading as='h2' fontSize='20px' color='black'>{title}</Heading>
         <Text color='gray'>{description}</Text>
         <HStack color = 'black'>
-          <a href="#">See More</a>
+          <a href={github}>See More</a>
           <FontAwesomeIcon icon={faArrowRight} size="1x" />
         </HStack>
       </VStack>

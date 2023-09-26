@@ -5,28 +5,35 @@ import Card from "./Card";
 
 const projects = [
   {
-    title: "React Space",
+    title: "React Movie App",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
-    getImageSrc: () => require("../images/photo1.jpg"),
-  },
+      "Discover and save your favorite movies with the Movie App. It is a web-based application built using React 🔥️",
+    getImageSrc: () => require("../images/movie-app-ss.png"),
+    github: "https://github.com/tarikliman/movie-app"
+  }
+  ,
   {
-    title: "React Infinite Scroll",
+    title: "Restaurant Website",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
-    getImageSrc: () => require("../images/photo2.jpg"),
-  },
+      "This project is a restaurant/cafe company website developed using pure HTML, CSS and JavaScript.",
+    getImageSrc: () => require("../images/restaurantss.png"),
+    github: "https://github.com/tarikliman/restaurant-website"
+  }
+  ,
   {
-    title: "Photo Gallery",
+    title: "Quiz Maker",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
-    getImageSrc: () => require("../images/photo3.jpg"),
-  },
+      "The Quiz Maker Project is a web-based application built using React that allows users to create and customize exam papers, quizzes, and tests.",
+    getImageSrc: () => require("../images/quiz-maker-ss.png"),
+    github: "https://github.com/tarikliman/quiz-maker"
+  }
+  ,
   {
-    title: "Event planner",
+    title: "My Portfolio",
     description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    getImageSrc: () => require("../images/photo4.jpg"),
+      "The app is designed to provide an overview of my background, skills, and the projects I've worked on.",
+    getImageSrc: () => require("../images/portoflio-ss.png"),
+    github: "https://github.com/tarikliman/my-portfolio"
   },
 ];
 
@@ -53,6 +60,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            github = {project.github}
           />
         ))}
       </Box>

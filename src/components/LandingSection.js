@@ -15,7 +15,7 @@ const LandingSection = () => (
   >
     
     <VStack>
-    <Avatar  size='xl' src="https://i.pravatar.cc/150?img=7"></Avatar>
+    <Avatar  size='xl' src="https://i.ibb.co/60zpsYq/1662488299845.jpg"></Avatar>
     <p>{greeting}</p>
 
     <Heading mt = {5}>{bio1}</Heading>
